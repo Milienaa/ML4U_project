@@ -1,7 +1,11 @@
 import './footer.scss';
 import NavigationItem from "../NavigationItem/NavigationItem";
+import { AppContext } from '../../Context';
+import { useContext } from 'react';
 
 const Footer = () => {
+    const { handlerOpen } = useContext(AppContext);
+
     return (
         <>
             <div className="footer__main">
@@ -26,7 +30,7 @@ const Footer = () => {
             <ul className="footer__nav">
                     <NavigationItem to=''>Get in touch</NavigationItem>
                     <NavigationItem to=''>Support</NavigationItem>
-                    <NavigationItem to=''><button className="btn__login">Log in</button></NavigationItem>
+                    <NavigationItem to=''><button className="btn__login" onClick={handlerOpen}>Log in</button></NavigationItem>
             </ul>
         </>
     );
